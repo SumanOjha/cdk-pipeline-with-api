@@ -30,7 +30,8 @@ class CdkPipelineWithApiStack(cdk.Stack):
                             commands=[  "python -m venv .venv",
                                         "python -m pip install -r requirements.txt",
                                         "npm config set unsafe-perm true",
-                                        "npx cdk synth"
+                                        "npx cdk synth",
+                                        "npx cdk deploy"
                             ]
                         )
                     )
