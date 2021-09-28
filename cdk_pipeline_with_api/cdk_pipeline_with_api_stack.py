@@ -24,7 +24,7 @@ class CdkPipelineWithApiStack(cdk.Stack):
 
         source = CodePipelineSource.git_hub("SumanOjha/cdk-pipeline-with-api", "master", authentication=core.SecretValue.plain_text(original_secret))
         pipeline =  CodePipeline(self, "Pipeline", 
-                        pipeline_name="Pipeline with REST API",
+                        pipeline_name="Pipeline-with-REST-API",
                         synth=ShellStep("Synth", 
                             input=source,
                             commands=[  "python -m venv .venv",
