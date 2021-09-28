@@ -1,13 +1,13 @@
 from aws_cdk import core as cdk
 from aws_cdk import core
 
-from . import widget_service
+from .api_lamdba_stack import MyLambdaStack
 
-
-class MyWidgetServiceStack(cdk.Stack):
+class MyWidgetServiceStack(cdk.Stage):
 
     def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
+        lambdaStack = MyLambdaStack(self, "LambdaStack")  # self -> scope (Stage Construct), "LambdaStack" --> construct_id
 
-        # The code that defines your stack goes here
-        widget_service.WidgetService(self, "Widgets")  # Passing 'scope' and 'id' for construct
+
+        
