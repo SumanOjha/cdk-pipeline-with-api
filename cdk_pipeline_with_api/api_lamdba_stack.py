@@ -4,7 +4,7 @@ from aws_cdk import core as cdk
 from . import widget_service
 
 class MyLambdaStack(cdk.Stack):
-    def __init(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
+    def __init__(self, scope: cdk.Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
     
         # Call the labmda function

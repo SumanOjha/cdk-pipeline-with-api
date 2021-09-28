@@ -31,7 +31,7 @@ class CdkPipelineWithApiStack(cdk.Stack):
                                         "python -m pip install -r requirements.txt",
                                         "npm config set unsafe-perm true",
                                         "npx cdk synth",
-                                        "npx cdk deploy"
+                                        # "npx cdk deploy"
                             ]
                         )
                     )
