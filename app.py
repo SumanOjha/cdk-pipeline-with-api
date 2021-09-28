@@ -29,6 +29,7 @@ CdkPipelineWithApiStack(app, "CdkPipelineWithApiStack",
     #env=core.Environment(account='123456789012', region='us-east-1'),
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
+    env=cdk.Environment(account="357568851775", region="ap-southeast-2")
     )
 
 app.synth()
