@@ -37,6 +37,6 @@ class CdkPipelineWithApiStack(cdk.Stack):
                     )
         stage = pipeline.add_stage(
                         MyWidgetServiceStack(self, "SumanTesting",
-                            env = cdk.Environment(account="357568851775", region="ap-southeast-2"))
-                            # env = kwargs['env'])
+                            # env = cdk.Environment(account="357568851775", region="ap-southeast-2"))
+                            env = kwargs['env'])
                 )
