@@ -28,7 +28,6 @@ class CdkPipelineWithApiStack(cdk.Stack):
                         synth=ShellStep("Synth", 
                             input=source,
                             commands=[  "python -m venv .venv",
-                                        "source .venv/bin/activate",
                                         "python -m pip install -r requirements.txt",
                                         "npm config set unsafe-perm true",
                                         "npx cdk synth"
