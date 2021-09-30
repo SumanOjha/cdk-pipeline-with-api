@@ -22,7 +22,10 @@ class CdkPipelineWithApiStack(cdk.Stack):
         decoded_secret = base64.b64decode(base64_bytes)
         original_secret = decoded_secret.decode('ascii')
 
-        source = CodePipelineSource.git_hub("SumanOjha/cdk-pipeline-with-api", "master", authentication=core.SecretValue.plain_text(original_secret))
+        # source = CodePipelineSource.git_hub("SumanOjha/cdk-pipeline-with-api", "master", authentication=core.SecretValue.plain_text(original_secret))
+        source = CodePipelineSource.connection(
+                        "SumanOjha/cdk-pipeline-with-api", "master",
+                        connection_arn="arn:aws:codestar-connections:us-east-1:357568851775:connection/adc9f9b9-e6e3-477e-a815-78dee3e83ddc")
         pipeline =  CodePipeline(self, "Pipeline", 
                         pipeline_name="Pipeline-with-REST-API",
                         synth=ShellStep("Synth", 
